@@ -437,3 +437,15 @@ select{
 select:focus{
     outline: none;
 }
+.label{
+    /* border: 2px solid gray; */
+    padding-left: 60px;
+    transition: transform 0.8s;
+    
+}
+.label:hover{
+    cursor: pointer;
+    color: #563434;
+    text-transform: uppercase;
+    
+}
