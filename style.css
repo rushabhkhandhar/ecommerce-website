@@ -396,7 +396,7 @@ footer
         position: absolute;
         top: 70px;
         left: 0;
-        background: #333;
+        background: #eedbdb;
         width: 100%;
         overflow: hidden;
         transition: max-height 0.5s;
@@ -409,7 +409,7 @@ footer
         margin-bottom: 10px;
     }
     nav ul li a{
-        color: #fff;
+        color: #000;
     }
      .menue-icon{
         display: block;
@@ -425,4 +425,15 @@ footer
     .col-1, .col-2, .col-3{
         flex-basis: 100%;
     }
+}
+.row-2{
+    justify-content: space-between;
+    padding-top: 0px;
+}
+select{
+    border: 1px solid#ff523b;
+    padding: 5px;
+}
+select:focus{
+    outline: none;
 }
