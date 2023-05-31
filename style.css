@@ -174,7 +174,7 @@ h4{
 }
 .col-3:hover{
     
-    transform:scale(50%);
+    transform: translateY(10px);
   
 }
 .offer{
