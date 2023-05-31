@@ -169,7 +169,8 @@ h4{
     color: #ff523b;
 }
 .col-3:hover{
-    transform: translate(0,5px);
+    
+    transform: scale(50%);
   
 }
 .offer{
