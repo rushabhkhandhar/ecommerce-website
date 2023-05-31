@@ -34,7 +34,11 @@ a {
     color: #555;
     
 }
+  nav ul li a.active{
+    text-decoration: underline;
+    color: #000;
 
+}
 
 p {
     color: #555;
@@ -170,7 +174,7 @@ h4{
 }
 .col-3:hover{
     
-    transform: scale(50%);
+    transform:scale(50%);
   
 }
 .offer{
