@@ -175,6 +175,7 @@ h4{
 .col-3:hover{
     
     transform: translateY(10px);
+    border: solid black 1px;
   
 }
 .offer{
@@ -449,6 +450,20 @@ select:focus{
     
 }
 .label:hover{
+    cursor: pointer;
+    color: #563434;
+    text-transform: uppercase;
+    
+}
+.carts{
+    width: 100%;
+    transition: transform 0.8s;
+    border-radius: 10px;
+    font-size: medium;
+
+    
+}
+.carts:hover{
     cursor: pointer;
     color: #563434;
     text-transform: uppercase;

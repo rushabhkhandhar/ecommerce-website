@@ -23,7 +23,7 @@
                 <nav>
                     <ul id="MenueItems">
 
-                        <li><a href=""class="active">Home</a></li>
+                        <li><a href="" class="active">Home</a></li>
                         <li><a href="product.html" target="_blank">Products</a></li>
                         <li><a href="">About Us</a></li>
                         <li><a href="">Account</a></li>
@@ -31,12 +31,14 @@
 
                     </ul>
                 </nav>
+                
                 <img src="photos/cart (1).png" width="30px" height="30px" class="cart">
+            
                 <img src="photos/menu.png" class="menue-icon" onclick="menuetoggle()">
-        
+
 
             </div>
-
+      
 
             <div class="row">
                 <div class="col-1">
@@ -74,7 +76,7 @@
         <h2 class="title">Signature Collection</h2>
         <div class="row">
             <div class="col-3">
-                <img src="photos/product-1.jpg">
+                <img src="photos/product-1.jpg" class="products-implement" onclick="openImage()">
                 <h4>Maroon Print Shirts</h4>
                 <div class="rating"></div>
                 <i class="fa fa-star"></i>
@@ -83,7 +85,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
                 <p>$29.99</p>
-                <label class="label">Add to Cart +  </label>
+                <label class="label">Add to Cart + </label>
             </div>
             <div class="col-3">
                 <img src="photos/product-2.jpg">
@@ -95,7 +97,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <p>$39.99</p>
-                <label class="label">Add to Cart +  </label>
+                <label class="label">Add to Cart + </label>
             </div>
             <div class="col-3">
                 <img src="photos/product-3.jpg">
@@ -107,7 +109,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-half-o"></i>
                 <p>$21.99</p>
-  <label class="label">Add to Cart +  </label>
+                <label class="label">Add to Cart + </label>
             </div>
             <div class="col-3">
                 <img src="photos/product-4.jpg">
@@ -119,7 +121,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
                 <p>$29.99</p>
-  <label class="label">Add to Cart +  </label>
+                <label class="label">Add to Cart + </label>
             </div>
 
         </div>
@@ -135,7 +137,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
                 <p>$29.99</p>
-  <label class="label">Add to Cart +  </label>
+                <label class="label">Add to Cart + </label>
             </div>
             <div class="col-3">
                 <img src="photos/product-6.jpg">
@@ -147,7 +149,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <p>$39.99</p>
-  <label class="label">Add to Cart +  </label>
+                <label class="label">Add to Cart + </label>
             </div>
             <div class="col-3">
                 <img src="photos/product-7.jpg">
@@ -159,7 +161,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-half-o"></i>
                 <p>$21.99</p>
-  <label class="label">Add to Cart +  </label>
+                <label class="label">Add to Cart + </label>
             </div>
             <div class="col-3">
                 <img src="photos/product-8.jpg">
@@ -171,7 +173,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
                 <p>$29.99</p>
-  <label class="label">Add to Cart +  </label>
+                <label class="label">Add to Cart + </label>
             </div>
             <div class="col-3">
                 <img src="photos/product-9.jpg">
@@ -183,7 +185,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
                 <p>$29.99</p>
-  <label class="label">Add to Cart +  </label>
+                <label class="label">Add to Cart + </label>
             </div>
             <div class="col-3">
                 <img src="photos/product-10.jpg">
@@ -195,7 +197,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
                 <p>$29.99</p>
-  <label class="label">Add to Cart +  </label>
+                <label class="label">Add to Cart + </label>
             </div>
             <div class="col-3">
                 <img src="photos/product-11.jpg">
@@ -207,7 +209,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
                 <p>$29.99</p>
-  <label class="label">Add to Cart +  </label>
+                <label class="label">Add to Cart + </label>
             </div>
             <div class="col-3">
                 <img src="photos/product-12.jpg">
@@ -219,8 +221,9 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
                 <p>$29.99</p>
-                  <label class="label">Add to Cart +  </label>
+                <label class="label">Add to Cart + </label>
             </div>
+
 
         </div>
     </div>
@@ -434,19 +437,27 @@
 
     <!-- js code -->
     <script>
-        var MenueItems =document.getElementById("MenueItems")
-        MenueItems.style.maxHeight="0px";
-        function menuetoggle(){
-            if(MenueItems.style.maxHeight=="0px")
-            {
-                MenueItems.style.maxHeight="200px"
+        var MenueItems = document.getElementById("MenueItems")
+        MenueItems.style.maxHeight = "0px";
+        function menuetoggle() {
+            if (MenueItems.style.maxHeight == "0px") {
+                MenueItems.style.maxHeight = "200px"
             }
-            else
-            {
-                MenueItems.style.maxHeight="0px"
+            else {
+                MenueItems.style.maxHeight = "0px"
             }
 
         }
+        function openImage() {
+
+            var imageUrl = "photos/product-1.jpg";
+            var width=800;
+            var height=600;
+            window.open(imageUrl, width , height);
+        }
+      
+
+
     </script>
 </body>
 
