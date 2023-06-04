@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub | Ecommerce Website Design</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+  
+
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                   <a href="index.html"> <img src="photos/shophub.png" width="125px"></a>
+                </div>
+
+                <nav>
+                    <ul id="MenueItems">
+
+                        <li><a href="" class="active">Home</a></li>
+                        <li><a href="product.html" target="_blank">Products</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Account</a></li>
+                        <li><a href="">Contact Us</a></li>
+
+                    </ul>
+                </nav>
+                
+               <a href="cart.html"> <img src="photos/cart (1).png" width="30px" height="30px" class="cartimg"></a>
+                
+            
+                <img src="photos/menu.png" class="menue-icon" onclick="menuetoggle()">
+       </div>
+    
+
+    <!-- all about product -->
+    <div class="new-container">
+        <h2 class="title">Signature Collection</h2>
+        <div class="row">
+            <div class="col-3">
+              <img src="photos/product-1.jpg" class="products-implement" >
+                <h4>Maroon Print Shirts</h4>
+                <div class="rating"></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <p>$29.99</p>
+                <button class="add-to-cart-btn" data-product="Product 1" data-price="29.99">Quantity +</button>
+                <div id="cart">
+                    
+                    <ul id="cart-items"></ul>
+                    <p>Total: $<span id="cart-total">0</span></p>
+                <a href="cart.html"><button onclick="checkout()" class="checkoutt">Checkout</button></a>
+                  </div>
+    
+    
+      </div>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About Us</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, mauris sit amet
+                        scelerisque semper, tortor risus ultricies enim, ac semper eros mauris nec enim. Donec ac enim
+                        eu risus semper scelerisque.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact Us</h4>
+                    <p>123 Main Street<br>
+                        Anytown, CA 12345<br>
+                        (123) 456-7890</p>
+                    <p><a href="mailto:info@example.com">info@example.com</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Follow Us</h4>
+                    <ul class="social-media-links">
+                        <li><a href="https://www.facebook.com/example"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/example"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/example"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/example"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                Copyright &copy; 2023 Example Company. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+  
+  // Array to store cart items
+let cartItems = [];
+
+// Function to handle the "Add to Cart" button click
+function handleAddToCartClick(event) {
+  const product = event.target.dataset.product;
+  const price = Number(event.target.dataset.price);
+  
+  addToCart(product, price); // Add the product to the cart
+  
+  updateCart(); // Update the cart UI
+}
+
+// Function to add products to the cart
+function addToCart(productName, price) {
+  // Check if the product is already in the cart
+  const existingItem = cartItems.find(item => item.name === productName);
+  
+  if (existingItem) {
+    existingItem.quantity++; // Increment quantity if the product is already in the cart
+  } else {
+    cartItems.push({ name: productName, price: price, quantity: 1 }); // Add a new product to the cart
+  }
+}
+
+// Function to update the cart UI
+function updateCart() {
+  const cartItemsElement = document.getElementById('cart-items');
+  const cartTotalElement = document.getElementById('cart-total');
+  
+  // Clear previous cart items
+  cartItemsElement.innerHTML = '';
+  
+  let total = 0;
+  
+  // Render cart items
+  cartItems.forEach(item => {
+    const itemElement = document.createElement('li');
+    itemElement.textContent = `${item.name} - $${item.price} - Quantity: ${item.quantity}`;
+    cartItemsElement.appendChild(itemElement);
+    
+    total += item.price * item.quantity;
+  });
+  
+  cartTotalElement.textContent = total;
+}
+
+// Function to simulate checkout process
+function checkout() {
+  // Perform necessary operations for the checkout process, such as validating form fields, applying coupons, etc.
+  
+  // Example: Clear the cart after checkout
+  cartItems = [];
+  
+  updateCart(); // Update the cart UI
+}
+
+// Add event listeners to "Add to Cart" buttons
+const addToCartButtons = document.getElementsByClassName('add-to-cart-btn');
+Array.from(addToCartButtons).forEach(button => {
+  button.addEventListener('click', handleAddToCartClick);
+});
+
+
+    </script>
+ 
+
+        
+        
+      
+
+
+    
+</body>
+
+</html>

@@ -1,31 +1,62 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <!-- Other head elements -->
-  <script src="path/to/your/javascript/file.js"></script>
-</head>
-<body>
-  <!-- Product listing -->
-  <div class="product">
-    <h3>Product 1</h3>
-    <p>Price: $10</p>
-    <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
-  </div>
+// Array to store cart items
+let cartItems = [];
+
+// Function to handle the "Add to Cart" button click
+function handleAddToCartClick(event) {
+  const product = event.target.dataset.product;
+  const price = Number(event.target.dataset.price);
   
-  <div class="product">
-    <h3>Product 2</h3>
-    <p>Price: $15</p>
-    <button onclick="addToCart('Product 2', 15)">Add to Cart</button>
-  </div>
+  addToCart(product, price); // Add the product to the cart
   
-  <!-- Cart -->
-  <div id="cart">
-    <h3>Cart</h3>
-    <ul id="cart-items"></ul>
-    <p>Total: $<span id="cart-total">0</span></p>
-    <button onclick="checkout()">Checkout</button>
-  </div>
+  updateCart(); // Update the cart UI
+}
+
+// Function to add products to the cart
+function addToCart(productName, price) {
+  // Check if the product is already in the cart
+  const existingItem = cartItems.find(item => item.name === productName);
   
-  <!-- Other website content -->
-</body>
-</html>
+  if (existingItem) {
+    existingItem.quantity++; // Increment quantity if the product is already in the cart
+  } else {
+    cartItems.push({ name: productName, price: price, quantity: 1 }); // Add a new product to the cart
+  }
+}
+
+// Function to update the cart UI
+function updateCart() {
+  const cartItemsElement = document.getElementById('cart-items');
+  const cartTotalElement = document.getElementById('cart-total');
+  
+  // Clear previous cart items
+  cartItemsElement.innerHTML = '';
+  
+  let total = 0;
+  
+  // Render cart items
+  cartItems.forEach(item => {
+    const itemElement = document.createElement('li');
+    itemElement.textContent = `${item.name} - $${item.price} - Quantity: ${item.quantity}`;
+    cartItemsElement.appendChild(itemElement);
+    
+    total += item.price * item.quantity;
+  });
+  
+  cartTotalElement.textContent = total;
+}
+
+// Function to simulate checkout process
+function checkout() {
+  // Perform necessary operations for the checkout process, such as validating form fields, applying coupons, etc.
+  
+  // Example: Clear the cart after checkout
+  cartItems = [];
+  
+  updateCart(); // Update the cart UI
+}
+
+// Add event listeners to "Add to Cart" buttons
+const addToCartButtons = document.getElementsByClassName('add-to-cart-btn');
+Array.from(addToCartButtons).forEach(button => {
+  button.addEventListener('click', handleAddToCartClick);
+});
