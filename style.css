@@ -420,6 +420,7 @@ footer
      .menue-icon{
         display: block;
         cursor: pointer;
+        
     }
 }
 /* media query for less than 600 */
@@ -446,8 +447,10 @@ footer
     
     .cart-info p{
         display: none;
-        
     }
+
+  
+    
 }
 .row-2{
     justify-content: space-between;
@@ -462,8 +465,12 @@ select:focus{
 }
 .label{
     /* border: 2px solid gray; */
-    padding-left: 60px;
+    /* padding-left: 60px; */
     transition: transform 1s;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
     
 }
 .label:hover{
