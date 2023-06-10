@@ -99,7 +99,8 @@
 
     <script>
   
-  // Array to store cart items
+
+// local storage
 let cartItems = [];
 
 // Function to handle the "Add to Cart" button click
@@ -110,6 +111,8 @@ function handleAddToCartClick(event) {
   addToCart(product, price); // Add the product to the cart
   
   updateCart(); // Update the cart UI
+  
+  saveCartItems(); // Save the cart items to local storage
 }
 
 // Function to add products to the cart
@@ -146,12 +149,28 @@ function updateCart() {
   cartTotalElement.textContent = total;
 }
 
+// Function to save the cart items to local storage
+function saveCartItems() {
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+// Function to load the cart items from local storage
+function loadCartItems() {
+  const storedCartItems = localStorage.getItem('cartItems');
+  
+  if (storedCartItems) {
+    cartItems = JSON.parse(storedCartItems);
+    updateCart(); // Update the cart UI after loading items
+  }
+}
+
 // Function to simulate checkout process
 function checkout() {
   // Perform necessary operations for the checkout process, such as validating form fields, applying coupons, etc.
   
   // Example: Clear the cart after checkout
   cartItems = [];
+  saveCartItems(); // Save the empty cart to local storage
   
   updateCart(); // Update the cart UI
 }
@@ -161,6 +180,10 @@ const addToCartButtons = document.getElementsByClassName('add-to-cart-btn');
 Array.from(addToCartButtons).forEach(button => {
   button.addEventListener('click', handleAddToCartClick);
 });
+
+// Load cart items from local storage on page load
+loadCartItems();
+
 
 
     </script>
