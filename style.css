@@ -382,7 +382,7 @@ footer
   }
   
   .social-media-links li a i {
-    color: #000000;
+    color: black;
   }
   
   .copyright {
@@ -469,7 +469,7 @@ select:focus{
     transition: transform 1s;
     justify-content: center;
     align-items: center;
-    margin: auto
+    margin: auto;
 
     
 }
